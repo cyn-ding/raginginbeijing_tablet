@@ -1,0 +1,226 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+  font-family: "Raleway", sans-serif;
+  color: #000000;
+  font-size: 16px;
+  line-height: 1;
+  margin: 2em;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #ffffff;
+}
+
+h1{
+  font-size: 50px;
+  line-height: 1;
+  padding: 50px 0;
+  text-align: center;
+  background: rgba(0, 0, 0, .5);
+}
+
+h2{
+  font-size: 32px;
+  line-height: 1.5;
+  text-align: center;
+  padding: 30px 30px;
+}
+
+h3{
+  font-size: 18px;
+  line-height: 1.5px;
+  padding: 30px 30px;
+  text-align: center;
+}
+
+img{
+  width: 40%;
+}
+
+footer{
+  background-color: black;
+  color: white;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+header p{
+  color: white;
+  font-size: 24px;
+  padding-bottom: 20px;
+  text-align: center;
+  background: rgba(0, 0, 0, .5);
+}
+
+
+/*navigation*/
+nav{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(190, 43, 43);
+  padding: 25px 0;
+  overflow: hidden;
+  /*position: fixed;
+  top: 0;
+  width: 100%; want to have nabar sticky to top but also below header*/
+}
+
+#active_icon::after{
+  content: url("../images/black_pepper.png");
+  width: 30%;
+}
+
+nav a{
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav a:hover{
+  text-decoration: underline;
+}
+nav a:focus{
+  text-decoration: underline;
+}
+nav a:active{
+  text-decoration: underline;
+}
+
+
+/*skip to main content*/
+.skip a{
+  background: white;
+  left: 0;
+  padding: 7px;
+  -webkit-transition: top 1s ease-out;
+  transition: top 1s ease-out;
+  z-index: 1;
+  position: absolute;
+  top: -50px;
+}
+
+/*place skip*/
+.skip a:focus{
+  position: absolute;
+  top: 10px;
+}
+
+/*style all elements when in focus*/
+*:focus{
+  border-bottom: 2px dashed black;
+  border-top: 2px dashed black;
+}
+
+
+header{
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  height: 600px;
+  /* display: block; */
+  width: 100%;
+  /*Thank you to Wong Zihoo from Unsplash for the photo */
+  background-image: url("../images/rinb_small.png");
+
+}
+
+.gallery{
+  min-height: 600px;
+  display: grid;
+  grid-template-columns: auto;
+  /* grid-template-rows: auto; */
+  grid-row-gap: 20px;
+  justify-content: center;
+
+}
+
+.gallery > img{
+  margin: 10px;
+  width: 300px;
+}
+
+.wechat-image{
+  width: 300px;
+  display: grid;
+  justify-content: center;
+}
+
+.contact-icons{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media all and (min-width: 760px){
+
+  header{
+    height: 800px;
+  }
+  img{
+     width:50%;
+  }
+
+  /* nav{
+    display: flex;
+    padding: 30px;
+    flex-direction: row;
+    /* text-align: right;
+  } */
+
+  nav li{
+    display:inline;
+    padding-right:20px;
+  }
+
+  /* .container{
+    display: grid;
+    grid-template-columns: 50px auto 500px auto 50px;
+    grid-template-rows: 400px 425px 425px 400px;
+  }*/
+
+  .gallery{
+    min-height: 600px;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    grid-row-gap: 20px;
+
+  }
+
+@media all and (min-width: 1260px){
+
+  header{
+    background-image: url("../images/rinbhead.png");
+    height: 700px;
+  }
+  img{
+    width:30%;
+  }
+
+/* The code below is for accessibility
+to turn off animations and movement
+for people who prefer reduced motion */
+@media screen and (prefers-reduced-motion: reduce){
+  html{
+      scroll-behavior: auto; /* Removes scroll animation */
+  }
+
+  .skip a{
+    -webkit-transition: none; /* sets to default setting */
+    transition: none;        /* sets to default setting */
+   }
+
+  /*Turn off parallax*/
+  header{
+    background-attachment: initial;
+  }
+}
