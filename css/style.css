@@ -168,23 +168,10 @@ header{
      width:50%;
   }
 
-  /* nav{
-    display: flex;
-    padding: 30px;
-    flex-direction: row;
-    /* text-align: right;
-  } */
-
   nav li{
     display:inline;
     padding-right:20px;
   }
-
-  /* .container{
-    display: grid;
-    grid-template-columns: 50px auto 500px auto 50px;
-    grid-template-rows: 400px 425px 425px 400px;
-  }*/
 
   .gallery{
     min-height: 600px;
